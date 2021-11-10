@@ -263,3 +263,26 @@
 // }
 
 // attachEventListeners();
+
+// const arr= [5,1,3,2,6];
+// let initialParameter = 0;
+
+// const output= arr.reduce(function(acc,curr){
+//     acc=acc+curr;
+//     return acc;
+// },initialParameter);
+
+// console.log(output);
+
+// Find max in array
+
+//  const arr= [5,1,3,2,6];
+
+//  const output = arr.reduce(function(max,curr){
+//     if(curr > max){
+//         max= curr;
+//     }
+
+//  }, 0);
+
+//  console.log(output);
