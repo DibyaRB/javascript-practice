@@ -247,3 +247,19 @@
 //xyz(); // will throw an error, as its not in outer scope but instead is created as a local variable
 
 //Functions are First Class Citizens: It means functions are first class, ability to use function as values
+
+
+// var count =0;
+
+// document.getElementById('clickMe').addEventListener('click',function(){
+//     console.log('clicked',++count);
+// });
+
+// function attachEventListeners(){
+//     let count =0; 
+//     document.getElementById('clickMe').addEventListener('click',function(){
+//     console.log('clicked',++count);
+// });
+// }
+
+// attachEventListeners();
