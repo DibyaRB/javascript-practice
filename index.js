@@ -337,3 +337,74 @@
 // }
 
 
+// function getData() {
+//     console.log("Fetching Data...");
+// }
+
+
+// const debounce = function (fn, delay) {
+//     let context = this;
+//     args = arguments;
+//     let timer;
+//     clearTimeout(timer);
+//     return function () {
+//         timer = setTimeout(() => {
+//           fn.apply(context,arguments);
+//         }, delay);
+
+//     }
+// }
+
+// const debouncedFn = debounce(getData, 500);
+
+// const debounceMyfn =function(fn,delay){
+//     let context =this;
+//     let args=arguments;
+
+//     let timer;
+
+//     clearTimeout(timer);
+//     return function(){
+//         setTimeout(()=>{
+//             fn.apply(context,args);
+//         },delay)
+//     }
+// }
+
+// const throttle = function(fn,limit) {
+//     let flag =true;
+
+//     return function(){
+//         let context = this;
+//         args=arguments;
+//         if(flag){
+//             fn.apply(context,args);
+//             flag=false;
+//             setTimeout(()=>{
+//              flag= true;
+//             },limit);
+//         }
+//     }
+// }
+
+
+// const throttle =function(fn,limit){
+//     let flag = true;
+
+//     return function(){
+//         let context = this;
+//         let args= arguments;
+//         if(flag){
+//             fn.apply(context,args);
+//             flag= false;
+//             setTimeout(()=>{
+//                 flag= true;
+//             },limit);
+//         }
+//     }
+
+// }
+
+
+
+
