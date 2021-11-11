@@ -286,3 +286,54 @@
 //  }, 0);
 
 //  console.log(output);
+
+//What is prototype?
+//Whenever we create an object, js engine automatically puts hidden properties into and object and attaches it to your object, and that is how you get access to those properties and methods.
+
+// let object ={
+//     name:"Ak",
+//     city: "Dehradun"
+// };
+
+// let object2={
+//     name: "Dibya"
+// };
+
+// object2.__proto__=object;
+
+// delete object2.city;
+
+// console.log(object2.name);
+
+//polyfill for bind method
+
+// Function.prototype.mybind= function(...args){
+//     let obj = this;
+//     params = args.slice(1);
+
+//     return function(...args2){
+//         obj.apply(args[0],[...params,...args2]);
+//     }
+// }
+
+// let printName=function(hometown,state){
+//     console.log(this.fname + " " +this.lname + " " + hometown );
+// }
+
+// let name={
+//     fname:"dibya",
+//     lname:"Ranjan"
+// };
+
+// let printMyName= printName.mybind(name,["bpd","odisha"]);
+// printMyName();
+
+// Function.prototype.mybind= function(...args){
+//     let obj=this;
+//     let params= args.slice(1);
+//     return function(...args2){
+//         obj.apply(args[0],[...params,...args2]);
+//     }
+// }
+
+
