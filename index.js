@@ -405,6 +405,76 @@
 
 // }
 
+let promise1 = new Promise(function(resolve,reject){
 
+    setTimeout(()=>{
+        resolve('resolved1')
+    },1000);
+});
+
+
+let promise2 = new Promise(function(resolve,reject){
+
+    setTimeout(()=>{
+        resolve('resolved2')
+    },1000);
+});
+
+
+let promise3 = new Promise(function(resolve,reject){
+
+    setTimeout(()=>{
+        resolve('resolved3')
+    },1000);
+});
+
+
+let promise4 = new Promise(function(resolve,reject){
+
+    setTimeout(()=>{
+        resolve('resolved5')
+    },2000);
+});
+
+
+let promise5 = new Promise(function(resolve,reject){
+
+    setTimeout(()=>{
+        resolve('resolved4')
+    },1000);
+});
+
+let promiseArray= [promise1,promise2,promise3,promise4,promise5];
+
+Promise.myAll= function(promiseArr){
+    let results=[];
+
+    let errResp=[];
+
+    return new Promise(function(resolve,reject){
+            promiseArr.forEach(async (p,index)=>{
+
+                try{
+                    let resp = await p;
+                    results.push(resp);
+                     if(index==results.length-1){
+                        if(errResp.length){
+                            reject(errResp);
+                        }
+                        else
+                        resolve(results);
+                    }
+                }
+                catch(err){
+                    errResp.push(err);
+                }
+               
+            });
+    });
+}
+
+Promise.myAll(promiseArray).then(function(response){
+    console.log(response);
+});
 
 
