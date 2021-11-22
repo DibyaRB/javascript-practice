@@ -491,3 +491,29 @@ const flatten = function(arr, result = []) {
   return result;
 };
 
+//Code for Prototypal Inheritance using classes
+
+//prototypal inheritance
+
+function Bike(name){
+    this.name= name;
+}
+
+Bike.prototype.displayName =function(){
+    console.log(this.name);
+}
+
+var b1= new Bike("Yamaha");
+b1.displayName();
+
+class Bike{
+    constructor(name){
+        this.name=name;
+    }
+    displayName(){
+        console.log(this.name);
+    }
+}
+
+var b1= new Bike("Yamaha");
+b1.displayName();
