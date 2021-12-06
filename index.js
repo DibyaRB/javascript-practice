@@ -517,3 +517,45 @@ class Bike{
 
 var b1= new Bike("Yamaha");
 b1.displayName();
+
+
+// let sumf= sum(1)(2)(3)(4)(5)(); // output : 6
+// console.log(sumf);
+
+// function z(){
+//     let a=10;
+//     return function y(){
+//         console.log(a);
+//     }
+// }
+
+
+function myCalc(val){
+    
+  
+        this.value= val;
+
+
+}
+
+myCalc.prototype.lakhs=function(l){
+    this.value=this.value + (l* 100000);
+        return this;
+}
+
+myCalc.prototype.thousand=function(t){
+    this.value=this.value + (t* 1000);
+        return this;
+}
+
+myCalc.prototype.hundred=function(h){
+    this.value=this.value + (h* 100);
+        return this;
+}
+
+myCalc.prototype.done=function(){
+    return this.value;
+}
+
+var b= new myCalc(5);
+console.log(b.lakhs(2).done());
