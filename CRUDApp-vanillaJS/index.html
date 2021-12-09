@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD App</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="false">
+                <div>
+                    <label> Full Name </label>
+                    <input type="text" name="fullName" id="fullName">
+                </div>
+                <div>
+                    <label> Emp Code </label>
+                    <input type="text" name="empCode" id="empCode">
+                </div>
+                <div>
+                    <label> Salary </label>
+                    <input type="text" name="salary" id="salary">
+                </div>
+                <div>
+                    <label> City </label>
+                    <input type="text" name="city" id="city">
+                </div>
+
+                <div>
+                    <input type="submit"/>
+                </div>
+              
+              
+            </form>
+        </td>
+        <td>
+            <table class="list" id="employeelist">
+                <thead>
+                    <tr>
+                        <th>Full name</th>
+                        <th>Emp Code</th>
+                        <th>Salary</th>
+                        <th>City</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+<script src="index.js"> </script>
+</body>
+</html>
