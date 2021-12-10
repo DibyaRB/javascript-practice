@@ -559,3 +559,300 @@ myCalc.prototype.done=function(){
 
 var b= new myCalc(5);
 console.log(b.lakhs(2).done());
+
+
+
+// function getData(){
+//     //this function is basically a heavy function, and maybe calls an api
+//     console.log("invoked");
+// }
+// // document.getElementById('inp').addEventListener('keyup',()=>{
+// //     getData();
+// // });
+
+// const debounceMyFn= (fn,limit) =>{
+
+//     let timer;
+//     return function(){
+
+//         let context= this;
+//         let args= arguments;
+//         clearTimeout(timer);
+//         timer= setTimeout(()=>{
+//             fn.apply(context,args);
+//         },limit);
+//     }
+// }
+
+// let debouncedFn= debounceMyFn(getData,500);
+
+// // document.getElementById('inp').addEventListener('keyup', debouncedFn);
+
+// const throttleMyFn= (fn,limit)=>{
+
+//     let inThrottle = false;
+
+//     return function(){
+//         let context= this;
+//         let args= arguments;
+
+//         if(!inThrottle){
+//             fn.apply(context,args);
+//             inThrottle = true;
+//             setTimeout(()=>{
+//                 inThrottle= false;
+//             },limit);
+//         }
+//     }
+// }
+
+// let throttledFn= throttleMyFn(getData,1000);
+// document.getElementById('inp').addEventListener('keyup', throttledFn);
+
+//Implement GroupBy Function
+
+
+
+// let obj1={
+//     key1:'a',
+//     key2:'b'
+// };
+
+// let obj2={
+//     key1:'k',
+//     key2:'b'
+// };
+
+// let obj3={
+//     key1:'b',
+//     key2:'c'
+// };
+
+// let obj4 = {
+//     key1:'b',
+//     key2:'d'
+// };
+
+// // returned obj ={
+// //     a:[obj1],
+// //     k:[obj2],
+// //     b:[obj3,obj4]
+// // }
+
+
+
+// // returned object = {
+// //     a:an array of object 1 and object 2,
+// //     b: array of object3
+// // }
+
+
+// // return an object, key will be the key I pass, and value is an array of objects which has this key
+// // array of obj and should be grouped by the key i pass
+
+// let arr1=[obj1,obj2,obj3,obj4];
+
+// function groupBy(arr,keyStr){
+//     let returnObj={
+
+//     };
+//     //returnObj[keyStr]=[];
+//     let keyArr=[];
+//     let map={
+
+//     };
+//     for(let i=0;i<arr.length;i++){
+//         // if(arr[i].hasOwnProperty(keyStr)){
+//         //             returnObj[keyStr].push(arr[i]);
+//         // }
+//         if(!map[arr[i][keyStr]])
+//         {
+//             keyArr.push(arr[i][keyStr]);
+//             map[arr[i][keyStr]]= true;
+//         }
+     
+
+//     }
+
+//     console.log(keyArr);
+
+//     for( let i=0;i<keyArr.length;i++){
+
+//         returnObj[keyArr[i]]=[];
+
+//         let val= keyArr[i];
+        
+//         for( let j=0;j<arr.length;j++){
+//             if(arr[j][keyStr]=== val){
+//                 returnObj[keyArr].push(arr[j]);
+//             }
+//         }
+//     }
+
+//     return returnObj;
+
+
+// }
+
+// let result= groupBy(arr1,'key1');
+
+// console.log(result);
+
+
+// Given 2 sorted arrays nums1 and nums2 of size m and n 
+// return the median of the two sorted arrays
+
+// Example 1:
+// Input: nums1 = [1,3] , nums2 = [2]
+// Output: 2
+// Explanation merged array = [1,2,3] , median : 2
+
+// Example2:
+// Input: nums1=[1,2], nums2 = [3,4]
+// Output: 2.5
+// Explanation= merged array = [1,2,3,4]. median = (2+3)/2 = 2.5
+
+// function getMedian(nums1,nums2){
+
+//     let i=0;
+//     let j=0;
+//     const res=[];
+
+//     while(i<nums1.length &&j<nums2.length){
+//         if(nums1[i]<nums2[j]){
+//             res.push(nums1[i]);
+//             i++;
+//         }
+//         else if(nums1[i]>nums2[j]){
+//             res.push(nums2[j]);
+//             j++;
+//         }
+//         else
+//         {
+//             res.push(nums1[i]);
+//             res.push(nums2[j]);
+//             i++;
+//             j++;
+//         }
+//     }
+
+//     while(i<nums1.length){
+//         res.push(nums1[i]);
+//         i++;
+//     }
+
+//     while(j<nums2.length){
+//         res.push(nums2[j]);
+//         j++;
+//     }
+
+//     console.log(res);
+
+//     if(res.length%2){
+//         return res[Math.floor(res.length/2)];
+//     }
+//     else{
+//         return (res[ (res.length)/2 -1 ] + res[(res.length/2)] )/2;
+//     }
+// }
+
+// let arr1=[1,2];
+// let arr2=[3,4];
+
+
+
+// console.log(getMedian(arr1,arr2));
+
+// arr1=[1,3];
+// arr2=[2];
+
+// console.log(getMedian(arr1,arr2));
+
+// function getData(){
+//     console.log("invoked getData()");
+// }
+
+// const debounceMyFn = (fn,limit)=>{
+
+//     let timer;
+//     return function(){
+//         let context= this;
+//         let args= arguments;
+//         clearTimeout(timer);
+
+//         timer= setTimeout(()=>{
+//             fn.apply(context,args);
+//         },limit);
+
+//     }
+// }
+
+// const debouncedFn = debounceMyFn(getData, 500);
+
+// document.getElementById('inp').addEventListener('keyup',debouncedFn);
+
+// let arr=[1,2,3,4,5];
+
+// function callbackFn(item)
+// {
+
+//     //even odd logic;
+
+//     return (item%2 && item>2);
+
+// }
+
+
+// // let arr2=arr.reduce(function(acc,item){
+// //     if(isEven(item)){
+// //         acc.push(item);
+// //     }
+// //     return acc;
+// // },[]);
+
+// // console.log(arr2);
+
+// Array.prototype.filterUsingReduce = function(callbackFn){
+//     let arr=this;
+
+//     let res= arr.reduce(function(acc,item){
+//         if(callbackFn(item)){
+//             acc.push(item);
+//         }
+//         return acc;
+//     },[]);
+
+//     return res;
+// }
+
+// console.log(arr.filterUsingReduce(callbackFn));
+
+let arr= [1,2,3,4,5];
+
+function delay(delayinSec){
+    return new Promise(function(res,rej){
+        setTimeout(()=>{
+            // console.log(element);
+            res();
+    
+        },1000*delayinSec)
+    });
+    
+}
+
+async function doSomething(){
+    for(let i=1;i<=arr.length;i++){
+        //    console.log(i);
+           await delay(2);
+           console.log(i);
+        }
+} 
+
+doSomething();
+
+
+
+// arr.forEach(async (elem,index)=>{
+//         await delay(5);
+//         console.log(index);
+// })
