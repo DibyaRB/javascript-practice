@@ -1,0 +1,328 @@
+// // // //Design a function, that takes a word paragraph as an input, and as an output it returns list of top 5 occuring words, along with their frequencies.
+
+
+// // // let para= "A quick brown fox jumps over a lazy dog quick brown fox brown a brown brown brown";
+
+// // // function returnTop5OccuringWords(str){
+// // //     let res={
+
+// // //     };
+
+// // //     const splittedArr = str.split(' ');
+
+// // //     for(let i=0;i<splittedArr.length;i++){
+// // //         if(!res[splittedArr[i]]){
+          
+// // //             res[splittedArr[i]]=1;
+// // //         }
+// // //         else{
+// // //             res[splittedArr[i]]++;
+// // //         }
+// // //     }
+
+   
+
+// // //     let arrTobeSorted=[];
+
+// // //     for(key in res){
+// // //         arrTobeSorted.push(
+// // //             {
+// // //                 word:key,
+// // //                 count: res[key]
+// // //             }
+// // //         )
+// // //     }
+
+// // //     //console.log(arrTobeSorted);
+
+// // //     arrTobeSorted.sort(function(a,b){
+// // //         return b.count-a.count;
+// // //     });
+
+// // //     let finalRes=[];
+
+// // //     for(let i=0;i<arrTobeSorted.length && i<5;i++){
+// // //         finalRes.push(arrTobeSorted[i]);
+// // //     }
+
+// // //     return finalRes;
+
+
+// // // }
+
+// // // let results = returnTop5OccuringWords(para);
+// // // console.log(results);
+
+
+
+// // // function main(){
+// // //     for(var i=1; i!=10; i++){
+// // //         (setTimeout(
+// // //                 function display(){ 
+// // //                  console.log(i); 
+// // //              }
+// // //           ,0)
+// // //         )(i);
+          
+// // //     }
+// // //    console.log(i);
+// // //    }
+   
+
+// // //    function fn(){
+// // //     let a = [10,20];
+// // //     setTimeout(()=>console.log(a),0);
+// // //     delete a[0];
+// // // }
+
+
+// // // function a() {
+// // //     function b() {
+// // //         return 3;
+// // //     }
+// // //     return b();
+// // //     function b() {
+// // //          return 8;
+// // //     }
+// // // }
+
+
+// // // function a() {
+// // //     // var b = function() {
+// // //     //     return 3;
+// // //     // };
+    
+// // //     return b();
+    
+// // //     var b = function() {
+// // //     return 8;
+// // //     };
+// // //  }
+
+// // //  function foo(a) {
+// // //      this.a=a;
+// // //         console.log(this.bar);
+// // // }
+
+// // //     var bar = “Global”;
+
+// // //     var obj1 = {
+// // //     bar: “obj1”,
+// // //     foo: foo
+// // // }
+
+// // // var obj2 = {
+// // //   bar: “obj2”,
+// // // }
+
+// // // foo();
+
+// // // obj1.foo.apply(obj2)
+
+// // // new foo()
+
+
+
+// // //Write a function to replace all the a with b and all the b with a
+
+// // // function replaceStr(str){
+// // //     const strArr= str.split('');
+
+// // //     for(let i=0;i<strArr.length; i++){
+// // //         if(strArr[i]==='a'){
+// // //             strArr[i]=b;
+// // //         }
+// // //         if(strArr[i]==='b'){
+// // //             strArr[i]=a;
+// // //         }
+// // //     }
+
+// // //     return strArr.join('');
+// // // }
+// // // let str1="Dibya Ranjan Bhoi";
+
+// // // console.log(replaceStr(str1));
+
+
+
+// // //sort the array so that all the 0 will come first and the 1
+
+// // // function sortZeroOne(arr){
+// // //     let i= 0;
+// // //     let j= arr.length-1;
+
+// // //     while(i<j){
+// // //         if(arr[i]===1){
+// // //             let temp = arr[i];
+// // //             arr[i]=arr[j];
+// // //             arr[j]=temp;
+// // //             j--;
+// // //         }
+// // //         else
+// // //         {
+// // //             i++;
+// // //         }
+// // //     }
+
+// // //     return arr;
+// // // }
+
+// // // const arr2=[0,1,0,0,1,1,0,1];
+// // // [0,0,0,0,1,1,1,1]
+// // // // console.log(sot)
+
+// // const arr= [2,7,11,1,13];
+
+// // //
+
+
+// // Write a function using which, I pass a selector to that function, it should return me an object, 
+
+// // function addOrDelay(divElement){
+// //     this.divElement=divElement;
+// //     this.color ="#fff";
+// //     this.hasTimer = null;
+
+// // }
+
+// // addOrDelay.prototype.addColor = function (color){
+
+// //     this.color=color;
+// //     // this.divElement.innerHTML = `<div style="background-color: ${color}"> </div>`;
+// //     this.divElement.style.backgroundColor = color;
+// //     return this;
+// // }
+
+// // addOrDelay.prototype.delayDuration = function (delay) {
+
+// //     this.hasTimer = setTimeout(()=>{
+// //        this.addColor(this.color)     
+// //     },delay);
+// //     return this;
+// // }
+
+// // //delay, adding a color
+
+// // let obj= new addOrDelay(document.getElementById("elem"));
+
+// // obj.addColor('red');
+
+// // obj.delayDuration(2000).addColor('green');
+
+// const inpElement = document.getElementById('inp');
+
+// const oDictionary = {
+
+// };
+
+// document.getElementById('submitBtn').addEventListener('click',()=>{
+//     addWord();
+//     console.log(oDictionary);
+// });
+
+// function addWord(){
+//     let strVal= inpElement.value;
+//     if(!oDictionary[strVal]){
+//         oDictionary[strVal]=1;
+//     }
+//     else{
+//         oDictionary[strVal]++;
+//     }
+//     inpElement = "";
+
+//     rerenderWordCloud();
+// }
+
+// function rerenderWordCloud(thresholdValue, noOfColumns){
+//     // sort my dictionary on basis of count, find the top 'thresholdValue' words, create Vertical Elements, keep track of existing Top, Bottom, Left, Right of individual word elements
+//     // create horizontal elements for top 5 threshold value words, with font size of occurence * scaling factor
+//     // Insert them to my word cloud
+//     // Create horizontal elements for (n-threholdValue-noOfColumns)
+//     // Create last n-threholdValue words as columns, and add them to my wordcloud
+
+
+
+// }
+
+// function gcd(a,b){
+//     if(!a){
+//         return b;
+//     }
+
+//     if(!b){
+//         return a;
+//     }
+
+//     if(a>b)
+//     {
+//         return gcd(a%b,b);
+//     }
+//     else{
+//         return gcd(a,b%a);
+//     }
+// }
+
+// console.log(gcd(11,17));
+
+let str1=`# Algorithms
+All the data structure algorithms
+## Sorting
+Sorting is a technique
+## Searching
+Searching is a technique to search an element in the given array
+# Data Structures
+Data structures
+## Linked List
+Linked is one of the data structure which keeps tracks the next
+## Maps
+Maps is one of the data structures`;
+
+
+function countHashes(wrd){
+    let wrdArr= wrd.split('');
+    let cnt=0;
+   // console.log(wrd)
+    for(let i=0;i<wrdArr.length;i++){
+        if(wrdArr[i] == '#'){
+            cnt++;
+        }
+    }
+
+    return cnt;
+}
+
+function displayHierarchy(str){
+
+    let mp={
+
+    };
+
+    const lines = str.split('\n');
+
+    lines.forEach((line)=>{
+        const words= line.split(' ');
+       
+       // console.log(words);
+        for(let i=0;i<words.length;i++){
+            
+
+            let wd= words[i];
+            let hashCount= countHashes(words[i])
+
+            if(hashCount){
+                if(!mp[wd])
+                     mp[wd] = 1;
+                else
+                    mp[wd]++;
+
+                
+            }
+
+        }
+    });
+
+    console.log(mp);
+
+}
+
+displayHierarchy(str1);
