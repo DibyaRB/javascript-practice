@@ -1,0 +1,220 @@
+// // function a(){
+// // let b;
+// // console.log(b);
+// // b=20;
+// // }
+// // a();
+
+// // function a(){
+// //     let z=10;
+// //     function b(){
+// //         console.log(z);
+// //     }
+
+// //     return b;
+// // }
+
+// // let fn= a();
+// // fn();
+
+// //cache key,ttl
+
+
+// class Cache {
+
+//     constructor(timeDuration){
+//         this.map ={
+
+//         };
+//         this.timeDuration = timeDuration; //store the time difference in ms for this cache
+//     }
+
+//     async  fetchFromAPI(key){
+//         // val is the returned response for this key
+//         return val
+//     }
+
+//      getTimeDifference(time1,time2){
+//         let diff= time2.getTime()-time1.getTime();
+//         return diff; //returns the time difference in ms
+//     }
+
+//      getCurrentTime(){
+//             return new Date();
+//     }
+
+//      getData(key){
+//             if(this.map[key]){
+
+//                 if(this.getTimeDifference(this.map[key].currTime,new Date())> this.timeDuration)
+//                 {
+//                     this.map[key].val = await this.fetchFromAPI(key);
+//                     this.map[key].currTime = new Date();
+//                     return this.map[key].val
+//                 }
+//                 else{
+//                     return this.map[key].val;
+//                 }
+
+               
+//             }
+//             else{
+               
+//                 this.map[key].val = await this.fetchFromAPI(key);
+//                 this.map[key].currTime = new Date();
+              
+//             }
+//     }
+// }
+
+
+// Build a chat window, left has user 1, right has user 2
+
+// const jsonData={
+//     messages:[
+//         {
+//             sender:"B",
+//             messageDesc:"Hello A",
+//             timestamp: "14:15, 22nd Dec, 2021"
+//         },
+//         {
+//             sender:"A",
+//             messageDesc:"Hello B",
+//             timestamp: "14:18, 22nd Dec, 2021"
+//         },
+//         {
+//             sender:"A",
+//             messageDesc:"Sample text from A",
+//             timestamp: "14:20, 22nd Dec, 2021"
+//         },
+//         {
+//             sender:"B",
+//             messageDesc:"Sample text from B",
+//             timestamp: "14:22, 22nd Dec, 2021"
+//         },
+//         {
+//             sender:"B",
+//             messageDesc:"Sample text from B again",
+//             timestamp: "14:25, 22nd Dec, 2021"
+//         },
+//         {
+//             sender:"A",
+//             messageDesc:"Final Text from A",
+//             timestamp: "14:30, 22nd Dec, 2021"
+//         },
+//     ]
+// };
+
+// const chartListContainer = document.querySelector('.chart-list-container');
+
+// // window.addEventListener('load',()=>{
+// //     renderMessage(jsonData);
+// // })
+
+
+
+// function renderMessage(currentData){
+
+//         let messageData = currentData.messages;
+
+//         let initialSender = "";
+
+//         if(messageData.length){
+//             initialSender= messageData[0].sender;
+//         }
+
+//         function determineLeftOrRight(sender){
+//             if(sender === initialSender){
+//                 return 'chat-left';
+//             }
+//             else {
+//                 return 'chat-right';
+//             }
+//         }
+
+//         chartListContainer.innerHTML='';
+
+//         messageData.forEach((messageEl)=>{
+
+//             let {sender, messageDesc, timestamp} = messageEl;
+
+//             let alignClass= determineLeftOrRight(sender);
+
+//             let message= `
+//                     <div class="${alignClass}">
+//                     <div>
+//                         <img class="contact-img" src="" alt=""/>
+//                         <div class="message-content">
+//                         <span>${sender}</span>
+//                         <span>${messageDesc}</span>
+//                         <span>${timestamp}</span>
+//                         </div>
+//                     </div>
+//                 </div>
+//             `;
+
+
+//            chartListContainer.innerHTML = chartListContainer.innerHTML + message;
+
+
+//         })
+
+      
+
+// }
+
+// renderMessage(jsonData);
+
+
+
+// let p1= new Promise(function(resolve,reject){
+
+//         setTimeout(()=>{
+//             resolve();
+//         },3000)
+// });
+
+// p1.then((res)=>{
+//     console.log('My Promise is resolved after 3sec');
+// });
+
+
+// Input: strs = ["eat","tea","tan","ate","nat","bat"]
+
+// Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+function groupAnagrams(strArr){
+
+    let res={
+
+    };
+
+    let finalRes=[];
+
+    for(let i=0;i<strArr.length;i++){
+        let myString= strArr[i];
+        let sortedStr = myString.split('').sort().join('');
+
+        if(res[sortedStr]){
+            res[sortedStr].push(strArr[i])
+        }
+
+        else{
+            res[sortedStr]=[];
+            res[sortedStr].push(strArr[i]);
+        }
+        
+        //console.log(myString);
+       // console.log(sortedStr);
+    }
+
+    for(let key in res){
+        finalRes.push(res[key]);
+    }
+
+    return finalRes;
+}
+
+const strs = ["eat","tea","tan","ate","nat","bat"];
+
+console.log(groupAnagrams(strs));
