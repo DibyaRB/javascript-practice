@@ -1,0 +1,65 @@
+:root {
+}
+
+ul {
+  list-style-type: none;
+  line-height: 2em;
+}
+
+ul summary {
+  cursor: pointer;
+}
+
+ul summary::marker {
+  display: none;
+}
+
+ul summary::-webkit-details-marker {
+  display: none;
+}
+
+ul li {
+    position: relative;
+    /* outline: 1px solid black; */
+}
+
+ul li::before{
+    position: absolute;
+    left: -10px;
+    top: 0px;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid blue;
+    content:"";
+    width: 8px;
+    height:1em;
+}
+
+ul li::after{
+    position: absolute;
+    left: -10px;
+    bottom: 0px;
+    border-left: 2px solid gray;
+    content:"";
+    width: 8px;
+    height:100%;
+}
+
+ul li:last-child::after{
+    display: none;
+}
+
+ul.tree > li:after, ul.tree > li:before{
+    display: none;
+}
+
+/* ul summary {
+    position: absolute;
+    left: -30px;
+    top: 0.5em;
+    content: "";
+    background: orange;
+    display:block;
+    width:20px;
+    height:20px;
+    border-radius: 50em;
+} */
